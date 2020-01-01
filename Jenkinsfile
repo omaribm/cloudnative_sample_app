@@ -16,9 +16,9 @@ podTemplate(
             image: 'maven:3-alpine',
             ttyEnabled: true,
             command: '/bin/bash',
-            workingDir: '/home/jenkins',
+            workingDir: '/home/jenkins/agent',
             envVars: [
-                envVar(key: 'HOME', value: '/home/jenkins')
+                envVar(key: 'HOME', value: '/home/jenkins/agent')
             ]
         ),
         containerTemplate(
@@ -26,7 +26,7 @@ podTemplate(
             image: 'docker.io/garagecatalyst/ibmcloud-dev:1.0.7',
             ttyEnabled: true,
             command: '/bin/bash',
-            workingDir: '/home/jenkins',
+            workingDir: '/home/jenkins/agent',
             envVars: [
                 envVar(key: 'HOME', value: '/home/devops')
             ]

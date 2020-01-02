@@ -50,7 +50,7 @@ podTemplate(
                     PID=`echo \$!`
                     # Wait for the app to start
                     sleep 20
-                    sh scripts/health_check.sh
+                    #sh scripts/health_check.sh
                     sh scripts/api_tests.sh 127.0.0.1 ${SERVICE_PORT}
                     # Kill process
                     kill \${PID}

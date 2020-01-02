@@ -100,7 +100,7 @@ podTemplate(
                 sh "mkdir -p deploy"
 
                 dir ('deploy') {
-                  git url: "https://github.com/ibm-cloud-architecture/cloudnative_sample_app_deploy.git",
+                  git url: "https://github.com/omaribm/cloudnative_sample_app_deploy.git",
                       branch: "master",
                       credentialsId: "github-credentials-id"
 
@@ -119,7 +119,7 @@ podTemplate(
                      git add . *.yaml
                      git commit -m "Jenkins commit: ${BUILD_NUMBER}"
                      git remote rm origin
-                     git remote add origin https://${GIT_USER_ACCOUNT}:${GITHUB_API_TOKEN}@github.com/ibm-cloud-architecture/cloudnative_sample_app_deploy.git > /dev/null 2>&1
+                     git remote add origin https://${GIT_USER_ACCOUNT}:${GITHUB_API_TOKEN}@github.com/omaribm/cloudnative_sample_app_deploy.git > /dev/null 2>&1
                      git push origin master
                 """
                 }
